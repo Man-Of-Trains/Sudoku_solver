@@ -23,6 +23,23 @@ class SudokuBoard():
             for j in range(len(self.board[i])):
                 if self.board[i][j] == 0:
                     self.board[i][j] = [i for i in range(1, 10)]
-
+                    
+    def check_row(self, row, col):
+        for j in range(len(self.board[row])):
+            if isinstance(self.board[row][j], list):
+                continue
+            else:
+                if self.board[row][j] in self.board[row][col]:
+                    print("Value removed!")
+                    self.board[row][col].remove(self.board[row][j])
+                    
+    def check_col(self, row, col):
+        for i in range(len(self.board)):
+            if isinstance(self.board[i][col], list):
+                continue
+            else:
+                if self.board[i][col] in self.board[row][col]:
+                    print("Value removed!")
+                    self.board[row][col].remove(self.board[i][col])
 
         
