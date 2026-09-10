@@ -1,4 +1,5 @@
 from SudokuBoard import SudokuBoard
+from SudokuSolver import SudokuSolver
 
 board = [
     [5, 3, 0, 0, 7, 0, 0, 0, 0],
@@ -14,8 +15,10 @@ board = [
 
 sudoku_board = SudokuBoard(board)
 sudoku_board.print_board()
-sudoku_board.fill_pencilmarks()
-sudoku_board.print_board()
-sudoku_board.check_row(0, 2)
-sudoku_board.check_col(0, 2)
-sudoku_board.print_board()
+sudoku_solver = SudokuSolver()
+sudoku_solver.test_solve(sudoku_board)
+# sudoku_board.fill_pencilmarks()
+# sudoku_board.print_board()
+# sudoku_board.check_row(0, 2)
+# sudoku_board.check_col(0, 2)
+# sudoku_board.print_board()
